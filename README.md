@@ -68,7 +68,7 @@ bioly/
 ## 📷 Ekran Görüntüleri
 
 ### Landing Page 
-![Landing page Görüntüsü](./screenshots/langingpage.png)
+![Landing page Görüntüsü](./screenshots/landingpage.png)
 
 ### Kullanıcı Dashboard
 ![Dashboard Görüntüsü](./screenshots/dashboard.png)
