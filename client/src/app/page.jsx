@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="flex items-center justify-center h-[calc(100vh-56px)]">
-        <div className="text-center text-black max-w-2xl">
+        <div className="text-center text-white max-w-2xl">
           <h1 className="text-5xl font-extrabold mb-6">Bioly'e Hoş geldin!</h1>
           <p className="text-xl mb-8">
             Kendini anlatan link profili. Hepsi tek bir yerde.
