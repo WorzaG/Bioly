@@ -13,6 +13,8 @@ app.use('/api/auth',authRouter)
 app.use('/api/dash',dashRouter)
 app.use('/api/user',userRouter)
 
-app.listen(5000,()=>{
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>{
     console.log("server aktif");
 })
