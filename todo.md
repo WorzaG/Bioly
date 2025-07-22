@@ -3,7 +3,7 @@
 ## 📁 1. Proje Yapısı Kurulumu
 - [x] `bioly` ana klasörünü oluştur
 - [x] `client` ve `server` klasörlerini oluştur
-- [ ] Git repo başlat, `.gitignore` ayarla
+- [x] Git repo başlat, `.gitignore` ayarla
 
 ---
 
@@ -30,7 +30,7 @@
 - [x] Auth middleware ile kullanıcıya özel erişim
 - [x] Public profil route'u: `GET /:username`
 - [x] Link Güncelleme
-- [] Link Count güncelleme ve istatistik tutma
+- [x] Link Count güncelleme ve istatistik tutma
 ---
 
 ## 🎨 5. Frontend Setup (React + Tailwind)
@@ -67,10 +67,10 @@
 ---
 
 ## 🚀 9. Deployment
-- [ ] MongoDB Atlas (veya Supabase)
-- [ ] Backend deploy (Render / Railway)
-- [ ] Frontend deploy (Vercel)
-- [ ] `.env` ayarlarını canlıya göre güncelle
+- [x] MongoDB Atlas (veya Supabase)
+- [x] Backend deploy (Render / Railway)
+- [x] Frontend deploy (Vercel)
+- [x] `.env` ayarlarını canlıya göre güncelle
 
 ---
 

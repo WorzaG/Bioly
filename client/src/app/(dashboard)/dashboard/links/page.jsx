@@ -10,11 +10,15 @@ export default function LinkManagePage() {
 
   const { myLinks } = useSelector(state => state.dash)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isEditOpen, setIsEditOpen] = useState(false)
+  const [selectedLink, setSelectedLink] = useState(null)
 
   useEffect(() => {
     dispatch(fetchLinks())
   },[dispatch])
+
+  const handleSelect = (selected) => {
+    setSelectedLink(selected)
+  }
 
   const handleEdit = (data) => {
     dispatch(updateLink(data))
@@ -56,21 +60,13 @@ export default function LinkManagePage() {
             </div>
 
             <div className="flex gap-2">
-              <button className="text-sm bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600" onClick={() => setIsEditOpen(true)}>
+              <button className="text-sm bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600" onClick={() => setSelectedLink(link)}>
                 Düzenle
               </button>
               <button className="text-sm bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700" onClick={() => handleDelete(link.id)}>
                 Sil
               </button>
             </div>
-            <EditModal 
-             isOpen={isEditOpen}
-             onClose={() => setIsEditOpen(false)}
-             onEdit={handleEdit}
-             title={link.link_name}
-             link={link.link}
-             id = {link.id}
-           />
           </div>
         ))}
       </div>
@@ -79,6 +75,16 @@ export default function LinkManagePage() {
         onClose={() => setIsModalOpen(false)}
         onAdd={handleAdd}
       />
+      {
+        selectedLink && (
+          <EditModal 
+          isOpen={!!selectedLink}
+          onClose={() => setSelectedLink(null)}
+          onEdit={handleEdit}
+          data={selectedLink}
+       />
+        )
+      }
     </div>
   )
 }

@@ -59,7 +59,7 @@ const dashSlice = createSlice({
                 state.mostClickedLink = findMostClicked(state.myLinks)
             })
             .addCase(addLink.fulfilled, (state, action) => {
-                state.myLinks.push(action.payload)
+                state.myLinks.push(action.payload.newLink)
                 state.totalClick = calculateTotalClick(state.myLinks)
             })
             .addCase(deleteLink.fulfilled, (state, action) => {
@@ -67,9 +67,10 @@ const dashSlice = createSlice({
                 state.totalClick = calculateTotalClick(state.myLinks)
             })
             .addCase(updateLink.fulfilled, (state, action) => {
-                const index = state.myLinks.findIndex(link => link.id === action.payload.id)
+               // console.log(action.payload);
+                const index = state.myLinks.findIndex(link => link.id === action.payload.data.id)
                 if (index !== -1) {
-                    state.myLinks[index] = action.payload
+                    state.myLinks[index] = action.payload.data
                 }
                 state.totalClick = calculateTotalClick(state.myLinks)
             })

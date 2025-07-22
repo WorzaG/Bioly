@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 
-export default function AddModal({ isOpen, onClose, onEdit,title,link, id}) {
+export default function AddModal({ isOpen, onClose, onEdit, data}) {
   const [formData, setFormData] = useState({
-    id:id,
-    title:title,
-    link: link
+    id:data.id,
+    title:data.link_name,
+    link: data.link
   })
 
   const handleChange = (e) => {
@@ -35,7 +35,7 @@ export default function AddModal({ isOpen, onClose, onEdit,title,link, id}) {
     <div className="fixed inset-0 backdrop-blur-xs
     flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">Düzenle</h2>
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">Düzenle {data.id} </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Başlık</label>
