@@ -51,10 +51,18 @@ GROUP BY u.id;
     return result.rows
 }
 
+const uploadPicture = async (id,url) => {
+  const query = `UPDATE users SET avatar_url = $1 WHERE id = $2`
+  const values = [url,id]
+  const result = await pool.query(query,values)
+  return result.rows[0]
+}
+
 module.exports = {
     addUser,
     findUserByEmail,
     findUserByID,
     findProfile,
-    findUserByUsername
+    findUserByUsername,
+    uploadPicture
 }

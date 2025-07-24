@@ -34,6 +34,12 @@ export const clickUpdate = createAsyncThunk('dashboard/click',async(id) => {
     return res.data
 })
 
+
+export const photoUpload = createAsyncThunk('dashboard/upload', async(data) => {
+    const res = await api.put('/dash/upload-profile-picture',data)
+    return res.data
+})
+
 const dashSlice = createSlice({
     name: 'dash',
     initialState: {

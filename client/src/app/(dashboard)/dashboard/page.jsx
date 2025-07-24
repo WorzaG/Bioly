@@ -23,12 +23,12 @@ export default function DashboardHome() {
           </div>
         </div>
 
-        <div className='w-3/5 max-w-3xs h-20 bg-gradient-to-b from-blue-500 to-indigo-500 p-0.5 rounded-2xl'>
+        <div className='w-3/5 max-w-3xs h-20 bg-gradient-to-b from-blue-500 to-indigo-500 p-0.5 rounded-2xl md:mx-5'>
           <div className='w-full bg-white h-full rounded-[calc(1rem-2px)] flex flex-col items-center justify-center'>
             <h1 className='font-bold'>En çok tıklanan linkin</h1>
             <p className=''>{
               mostClickedLink?.link_name
-            }  {mostClickedLink?.click_count}</p>
+            } : {mostClickedLink?.click_count}</p>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-const { addUser, findUserByEmail, findUserByID, findProfile, findUserByUsername } = require('../models/userModel')
+const { addUser, findUserByEmail, findUserByID, findProfile, findUserByUsername, uploadPicture } = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
@@ -79,9 +79,25 @@ const getMe = async (req,res) => {
 
 }
 
+
+const uplaodProfilePicture = async (req,res) => {
+  const userId = req.user.userId
+  try {
+    const imageUrl = `/uploads/${req.file.filename}`;
+    const upload = await uploadPicture(userId,imageUrl)
+    res.status(200).send({ success: true, imageUrl });
+
+  } catch (error) {
+    res.status(500).json({message:'sunucu hatası',error})
+
+  }
+}
+
+
 module.exports = {
     userRegister,
     userLogin,
     getProfileInfo,
-    getMe
+    getMe,
+    uplaodProfilePicture
 }

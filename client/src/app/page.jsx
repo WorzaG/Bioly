@@ -39,6 +39,7 @@ export default function Home() {
     width={1000}
     height={1000}
     className="w-full h-auto drop-shadow-2xl"
+    priority={true}
   />
 </div>
 

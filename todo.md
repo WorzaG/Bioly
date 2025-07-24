@@ -46,8 +46,6 @@
 - [x] Axios ile API bağlantısı  // düzenlenicek ileride moduler yapı olucak ve tüm api bağlantıları bir dosyada toparlanıcak
 - [x] Token'ı localStorage'a kaydet
 - [x] Giriş sonrası yönlendirme
-- [x] Token fonksiyonlara ulaşmıyor bunu çöz ---- AACCCiiiİİİllll
-
 ---
 
 ## 🧭 7. Frontend: Dashboard (Link Yönetimi)

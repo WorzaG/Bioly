@@ -24,9 +24,9 @@ export default function DashboardLayout({ children }) {
         {isOpen && (
   <div className="absolute top-10 left-0 w-full bg-white shadow-md z-50 p-4">
     <nav className="flex flex-col gap-4">
-    <Link href="/dashboard">Anasayfa</Link>
-        <Link href="/dashboard/links">Linklerim</Link>
-        <Link href="/dashboard/profile">Profil</Link>
+    <Link href="/dashboard" onClick={() => setIsOpen(!isOpen)}>Anasayfa</Link>
+        <Link href="/dashboard/links" onClick={() => setIsOpen(!isOpen)}>Linklerim</Link>
+        <Link href="/dashboard/profile" onClick={() => setIsOpen(!isOpen)}>Profil</Link>
         <button className="bg-red-500 hover:bg-red-600 text-white p-1 rounded-md " onClick={() => dispatch(logout())}>Çıkış Yap</button>
     </nav>
   </div>
