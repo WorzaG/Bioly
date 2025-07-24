@@ -22,9 +22,12 @@ export default function ProfilePage() {
         {/* Avatar */}
         <div className="p-[3px] rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 inline-block">
           <img
-            src={profile?.avatar_url
-              ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}${profile?.avatar_url}`
-              : '/defaultProfile.png'}
+            src={
+              profile?.avatar_url
+                ? `${(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').replace('/api', '')}${profile.avatar_url}`
+                : '/defaultProfile.png'
+            }
+            
             alt="avatar"
             className="w-24 h-24 rounded-full object-cover bg-white"
           />

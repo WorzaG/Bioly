@@ -25,9 +25,11 @@ export default function ProfilePage() {
           <p className='font-bold text-black opacity-100'>Edit</p>
         </div>
       <img
-        src={user?.avatar_url
-          ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}${user.avatar_url}`
-          : '/defaultProfile.png'}
+         src={
+          user?.avatar_url
+            ? `${(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').replace('/api', '')}${user.avatar_url}`
+            : '/defaultProfile.png'
+        }
         alt="Profil"
         className="w-auto h-auto rounded-full mx-auto mb-4 object-cover"
       />
